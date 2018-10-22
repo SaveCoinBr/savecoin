@@ -32,4 +32,5 @@ Route::prefix('contas')->name('contas.')->group(function () {
     Route::post('/load_tipo_contas', 'ContasController@load_tipo_contas')->name('loadTipoContas');
     Route::post('/load_bancos', 'ContasController@load_bancos')->name('loadBancos');
     Route::post('/load_contas', 'ContasController@load_contas')->name('loadContas');
+    Route::post('/load_conta', 'ContasController@load_conta')->name('loadConta');
 });
