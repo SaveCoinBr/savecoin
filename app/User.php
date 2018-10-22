@@ -10,13 +10,15 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    protected $table = 'usuarios';
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'nm_usuario', 'email', 'password',
     ];
 
     /**
@@ -25,6 +27,14 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password'
     ];
+
+    /**
+     * RELACIONAMENTO COM CONTA
+     */
+    public function tipo_conta()
+    {
+        return $this->hasMany('App\Conta', 'foreign_key', 'usuarios.id');
+    }
 }
